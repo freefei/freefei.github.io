@@ -2,10 +2,10 @@
 name: Github
 icon: fa fa-github-alt
 members:
-  - name: Comtu
+  - name: songrenfei
     notnewblank: false
-    link: http://github.com/comtu
+    link: http://github.com/freefei
 
-  - name: ComtuBlog
+  - name: freefeiBlog
     notnewblank: true
-    link: http://comtu.github.io/
+    link: http://freefei.github.io/
