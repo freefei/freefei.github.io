@@ -18,10 +18,10 @@ date : 2015-01-17
 **一、Github Pages 是什么?**
 
 	如果你对编程有所了解，就一定听说过github。它号称程序员的Facebook，有着极高的人气，许多重要的项目都托管在上面。简单说，它是一个具有版本管理功能的代码仓库，每个项目都有一个主页，列出项目的源文件。
-![pygments-monokai](/res/img/blog/2015/1/17/git_hub.jpg) 
+![pygments-monokai](/res/img/blog/2015/1/17/layout.jpg) 
 
 	但是对于一个新手来说，看到一大堆源码，只会让人头晕脑涨，不知何处入手。他希望看到的是，一个简明易懂的网页，说明每一步应该怎么做。因此，github就设计了Pages功能，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。
-![pygments-monokai](/res/img/blog/2015/1/17/github_static.jpg) 
+![pygments-monokai](/res/img/blog/2015/1/17/github-static.jpg) 
 		
 	github提供模板，允许站内生成网页，但也允许用户自己编写网页，然后上传。有意思的是，这种上传并不是单纯的上传，而是会经过Jekyll程序的再处理。
 **二、Jekyll是什么？**	
@@ -170,7 +170,7 @@ $ git push origin gh-pages
 首页：
 ![pygments-monokai](/res/img/blog/2015/1/17/myblog.jpg)  
 文章页面：
-![pygments-monokai](/res/img/blog/2015/1/17/hello_world.jpg)  
+![pygments-monokai](/res/img/blog/2015/1/17/hello_wrold.jpg)  
 * 第七步，绑定域名。
 如果你不想用http://username.github.com/jekyll\_demo/这个域名，可以换成自己的域名。
 具体方法是在repo的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如example.com或者xxx.example.com。
