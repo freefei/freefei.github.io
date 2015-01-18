@@ -46,7 +46,7 @@ date : 2015-01-17
 
 下面，我举一个实例，演示如何在github上搭建blog，你可以跟着一步步做。为了便于理解，这个blog只有最基本的功能。
 在搭建之前，你必须已经安装了[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)，并且有[github](https://github.com)账户。
-* 第一步，创建项目。
+* 第一步，创建项目。*
 在你的电脑上，建立一个目录，作为项目的主目录。我们假定，它的名称为jekyll_demo。
 
 ```python
@@ -62,9 +62,10 @@ $ git init
 	然后，创建一个没有父节点的分支gh-pages。因为github规定，只有该分支中的页面，才会生成网页文件。
 ```python
 $ git checkout --orphan gh-pages
+
 ```
    以下所有动作，都在该分支下完成。
-* 第二步，创建设置文件。
+* 第二步，创建设置文件。 *
 在项目根目录下，建立一个名为_config.yml的文本文件。它是jekyll的设置文件，我们在里面填入如下内容，其他设置都可以用默认选项，具体解释参见官方网页。
 ```python
 baseurl: /jekyll_demo
@@ -74,7 +75,7 @@ baseurl: /jekyll_demo
  /jekyll_demo
 	 |--　_config.yml
 ```
-* 第三步，创建模板文件。
+* 第三步，创建模板文件。*
 在项目根目录下，创建一个_layouts目录，用于存放模板文件。
 >$ mkdir _layouts
 
@@ -101,7 +102,7 @@ Jekyll使用Liquid模板语言，{{ page.title }}表示文章标题，{{ content
 　　　　|--　_layouts
 　　　　|　　　|--　default.html
 ```
-* 第四步，创建文章。
+* 第四步，创建文章。*
 回到项目根目录，创建一个_posts目录，用于存放blog文章。
 ```python
 $ mkdir _posts
@@ -128,7 +129,7 @@ $ mkdir _posts
 　　　　|--　_posts
 　　　　|　　　|--　2012-08-25-hello-world.html
 ```
-* 第五步，创建首页。
+* 第五步，创建首页。*
 有了文章以后，还需要有一个首页。
 回到根目录，创建一个index.html文件，填入以下内容。
 ```javascript
@@ -155,7 +156,7 @@ $ mkdir _posts
 　　　　|　　　|--　2012-08-25-hello-world.html
 　　　　|--　index.html
 ```
-* 第六步，发布内容
+* 第六步，发布内容 *
 现在，这个简单的Blog就可以发布了。先把所有内容加入本地git库。
 ```python
 $ git add .
@@ -171,7 +172,7 @@ $ git push origin gh-pages
 ![pygments-monokai](/res/img/blog/2015/1/17/myblog.jpg)  
 文章页面：
 ![pygments-monokai](/res/img/blog/2015/1/17/hello_wrold.jpg)  
-* 第七步，绑定域名。
+* 第七步，绑定域名。*
 如果你不想用http://username.github.com/jekyll\_demo/这个域名，可以换成自己的域名。
 具体方法是在repo的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如example.com或者xxx.example.com。
 如果绑定的是顶级域名，则DNS要新建一条A记录，指向204.232.175.78。如果绑定的是二级域名，则DNS要新建一条CNAME记录，指向username.github.com（请将username换成你的用户名）。此外，别忘了将_config.yml文件中的baseurl改成根目录"/"。
