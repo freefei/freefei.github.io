@@ -19,14 +19,14 @@ shTheme: shThemeDefault # shThemeDefault  shThemeDjango  shThemeEclipse  shTheme
 
 blog:
     name: 宋仁飞                                          # 博客名称
-    description: 第一个个人博客，学习中。                   # 博客描述
+    description: 第一个个人博客，学习中。                    # 博客描述
     title: songrenfei                                    # 网页标题
     url: http://freefei.github.io/                       # 博客地址
-    duoshuo: 10454850                                    # 多说ID  进入dev.duoshuo.com的首页 上方黑色栏右侧你的账号下拉选框--我的主页 进入后显示的网址最后的数字就是自己的ID
+    duoshuo: freefei                                     # 多说ID
     tongji: e0d9a75a7e53b54cd1e6649facd5906e             # 百度统计ID
     qiniu:                                               # 七牛云地址
 author:
-    name: songrenfei                                          # 作者名称
+    name: songrenfei                                     # 作者名称
     email: songrenfei@163.com                            # 邮箱地址
     weibo: http://weibo.com/3945136539                   # 微博地址
     github: https://github.com/freefei                   # GitHub地址
