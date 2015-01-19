@@ -24,20 +24,28 @@ date : 2015-01-17
 ![pygments-monokai](/res/img/blog/2015/1/17/github-static.jpg) 
 		
 	github提供模板，允许站内生成网页，但也允许用户自己编写网页，然后上传。有意思的是，这种上传并不是单纯的上传，而是会经过Jekyll程序的再处理。
+
 **二、Jekyll是什么？**	
 	 
 	 Jekyll（发音/'dʒiːk əl/，"杰克尔"）是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站
 ![pygments-monokai](/res/img/blog/2015/1/17/jekyll.jpg) 
 
-	整个思路到这里就很明显了。你先在本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站。
+整个思路到这里就很明显了。你先在本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站。
+
 这样做的好处是：
+
 > 免费，无限流量。
+
 > 享受git的版本管理功能，不用担心文章遗失。
->你只要用自己喜欢的编辑器写文章就可以了，其他事情一概不用操心，都由github处理。
+
+> 你只要用自己喜欢的编辑器写文章就可以了，其他事情一概不用操心，都由github处理。
 		
 它的缺点是：
+
 >有一定技术门槛，你必须要懂一点git和网页开发。
+
 >它生成的是静态网页，添加动态功能必须使用外部服务，比如评论功能就只能用[disqus](disqus.com)。
+
 >它不适合大型网站，因为没有用到数据库，每运行一次都必须遍历全部的文本文件，网站越大，生成时间越长。
 
 但是，综合来看，它不失为搭建中小型Blog或项目主页的最佳选项之一。
@@ -46,41 +54,48 @@ date : 2015-01-17
 
 下面，我举一个实例，演示如何在github上搭建blog，你可以跟着一步步做。为了便于理解，这个blog只有最基本的功能。
 在搭建之前，你必须已经安装了[git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)，并且有[github](https://github.com)账户。
-* 第一步，创建项目。*
+
+* 第一步，创建项目。
+
 在你的电脑上，建立一个目录，作为项目的主目录。我们假定，它的名称为jekyll_demo。
 
-```python
-$ mkdir jekyll_demo
-```
+> $ mkdir jekyll_demo
+
 
  对该目录进行git初始化。
-```python
-$ cd jekyll_demo
-$ git init
-```
 
-	然后，创建一个没有父节点的分支gh-pages。因为github规定，只有该分支中的页面，才会生成网页文件。
-```python
-$ git checkout --orphan gh-pages
+> $ cd jekyll_demo
 
-```
-   以下所有动作，都在该分支下完成。
-* 第二步，创建设置文件。 *
+> $ git init
+
+然后，创建一个没有父节点的分支gh-pages。因为github规定，只有该分支中的页面，才会生成网页文件。
+
+> $ git checkout --orphan gh-pages
+
+以下所有动作，都在该分支下完成。
+
+* 第二步，创建设置文件。 
+
 在项目根目录下，建立一个名为_config.yml的文本文件。它是jekyll的设置文件，我们在里面填入如下内容，其他设置都可以用默认选项，具体解释参见官方网页。
-```python
-baseurl: /jekyll_demo
-```
+
+> baseurl: /jekyll_demo
+
 目录结构变成：
-```python
+
+{% highlight text %}
  /jekyll_demo
 	 |--　_config.yml
-```
-* 第三步，创建模板文件。*
+{% endhighlight %}
+
+* 第三步，创建模板文件。
+
 在项目根目录下，创建一个_layouts目录，用于存放模板文件。
+
 >$ mkdir _layouts
 
-	进入该目录，创建一个default.html文件，作为Blog的默认模板。并在该文件中填入以下内容。
-```javascript
+进入该目录，创建一个default.html文件，作为Blog的默认模板。并在该文件中填入以下内容。
+
+{% highlight html %}
 <!DOCTYPE html>
 　　<html>
 　　<head>
@@ -93,23 +108,27 @@ baseurl: /jekyll_demo
 
 　　</body>
 　　</html>
-```
+{% endhighlight %}
+
 Jekyll使用Liquid模板语言，{{ page.title }}表示文章标题，{{ content }}表示文章内容，更多模板变量请参考官方文档。
 目录结构变成：
-```python
+
+{% highlight text %}
 /jekyll_demo
 　　　　|--　_config.yml
 　　　　|--　_layouts
 　　　　|　　　|--　default.html
-```
-* 第四步，创建文章。*
+{% endhighlight %}
+
+* 第四步，创建文章。
+
 回到项目根目录，创建一个_posts目录，用于存放blog文章。
-```python
-$ mkdir _posts
-```
+
+> $ mkdir _posts
+
 进入该目录，创建第一篇文章。文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。(注意，文件名必须为"年-月-日-文章标题.后缀名"的格式。如果网页代码采用html格式，后缀名为html；如果采用markdown格式，后缀名为md。）
 在该文件中，填入以下内容：（注意，行首不能有空格）
-```javascript
+{% highlight html %}
    ---
 　　layout: default
 　　title: 你好，世界
@@ -117,22 +136,25 @@ $ mkdir _posts
 　　<h2>{{ page.title }}</h2>
 　　<p>我的第一篇文章</p>
 　　<p>{{ page.date | date_to_string }}</p>
-```
+{% endhighlight %}
+
 每篇文章的头部，必须有一个yaml文件头，用来设置一些元数据。它用三根短划线"---"，标记开始和结束，里面每一行设置一种元数据。"layout:default"，表示该文章的模板使用_layouts目录下的default.html文件；"title: 你好，世界"，表示该文章的标题是"你好，世界"，如果不设置这个值，默认使用嵌入文件名的标题，即"hello world"。
 在yaml文件头后面，就是文章的正式内容，里面可以使用模板变量。{{ page.title }}就是文件头中设置的"你好，世界"，{{ page.date }}则是嵌入文件名的日期（也可以在文件头重新定义date变量），"| date_to_string"表示将page.date变量转化成人类可读的格式。
 目录结构变成：
-```python
+{% highlight text linenos %}
 /jekyll_demo
 　　　　|--　_config.yml
 　　　　|--　_layouts
 　　　　|　　　|--　default.html 
 　　　　|--　_posts
 　　　　|　　　|--　2012-08-25-hello-world.html
-```
-* 第五步，创建首页。*
+{% endhighlight %}
+
+* 第五步，创建首页。
+
 有了文章以后，还需要有一个首页。
 回到根目录，创建一个index.html文件，填入以下内容。
-```javascript
+{% highlight text %}
 ---
 　　layout: default
 　　title: 我的Blog
@@ -144,10 +166,12 @@ $ mkdir _posts
 　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 　　　　{% endfor %}
 　　</ul>
-```
-它的Yaml文件头表示，首页使用default模板，标题为"我的Blog"。然后，首页使用了`{% for post in site.posts %}`，表示对所有帖子进行一个遍历。这里要注意的是，Liquid模板语言规定，输出内容使用两层大括号，单纯的命令使用一层大括号。至于{{site.baseurl}}就是_config.yml中设置的baseurl变量。
+{% endhighlight %}
+
+它的Yaml文件头表示，首页使用default模板，标题为"我的Blog"。然后，首页使用了 {% for post in site.posts %}{% endfor %}，表示对所有帖子进行一个遍历。这里要注意的是，Liquid模板语言规定，输出内容使用两层大括号，单纯的命令使用一层大括号。至于{{site.baseurl}}就是_config.yml中设置的baseurl变量。
 目录结构变成：
-```python
+
+{% highlight text %}
 /jekyll_demo
 　　　　|--　_config.yml
 　　　　|--　_layouts
@@ -155,18 +179,22 @@ $ mkdir _posts
 　　　　|--　_posts
 　　　　|　　　|--　2012-08-25-hello-world.html
 　　　　|--　index.html
-```
-* 第六步，发布内容 *
+{% endhighlight %}
+
+* 第六步，发布内容 
+
 现在，这个简单的Blog就可以发布了。先把所有内容加入本地git库。
-```python
-$ git add .
-$ git commit -m "first post"
-```
+
+> $ git add .
+
+> $ git commit -m "first post"
+
 然后，前往github的网站，在网站上创建一个名为jekyll_demo的库。接着，再将本地内容推送到github上你刚创建的库。注意，下面命令中的username，要替换成你的username。
-```python
-$ git remote add origin https://github.com/username/jekyll_demo.git
-$ git push origin gh-pages
-```
+
+> $ git remote add origin https://github.com/username/jekyll_demo.git
+
+> $ git push origin gh-pages
+
 上传成功之后，等10分钟左右，访问http://username.github.com/jekyll\_demo/就可以看到Blog已经生成了（将username换成你的用户名）。
 首页：
 ![pygments-monokai](/res/img/blog/2015/1/17/myblog.jpg)  
