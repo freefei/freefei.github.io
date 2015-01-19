@@ -12,24 +12,28 @@ date : 2015-01-17
 
 **前言**
 
-	在ｇithub网站上搭建blog。既拥有绝对管理权，又享受github带来的便利----不管何时何地，只要向主机提交commit，就能发布新文章。更妙的是，这一切还是免费的，github提供无限流量，世界各地都有理想的访问速度。	
+在ｇithub网站上搭建blog。既拥有绝对管理权，又享受github带来的便利----不管何时何地，只要向主机提交commit，就能发布新文章。更妙的是，这一切还是免费的，github提供无限流量，世界各地都有理想的访问速度。
+
 ![pygments-monokai](/res/img/blog/2015/1/17/git_hub.jpg)  
 
 <!-- more -->
 
 **一、Github Pages 是什么?**
 
-	如果你对编程有所了解，就一定听说过github。它号称程序员的Facebook，有着极高的人气，许多重要的项目都托管在上面。简单说，它是一个具有版本管理功能的代码仓库，每个项目都有一个主页，列出项目的源文件。
+如果你对编程有所了解，就一定听说过github。它号称程序员的Facebook，有着极高的人气，许多重要的项目都托管在上面。简单说，它是一个具有版本管理功能的代码仓库，每个项目都有一个主页，列出项目的源文件。
+
 ![pygments-monokai](/res/img/blog/2015/1/17/layout.jpg) 
 
-	但是对于一个新手来说，看到一大堆源码，只会让人头晕脑涨，不知何处入手。他希望看到的是，一个简明易懂的网页，说明每一步应该怎么做。因此，github就设计了Pages功能，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。
+但是对于一个新手来说，看到一大堆源码，只会让人头晕脑涨，不知何处入手。他希望看到的是，一个简明易懂的网页，说明每一步应该怎么做。因此，github就设计了Pages功能，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。
+
 ![pygments-monokai](/res/img/blog/2015/1/17/github-static.jpg) 
 		
-	github提供模板，允许站内生成网页，但也允许用户自己编写网页，然后上传。有意思的是，这种上传并不是单纯的上传，而是会经过Jekyll程序的再处理。
+github提供模板，允许站内生成网页，但也允许用户自己编写网页，然后上传。有意思的是，这种上传并不是单纯的上传，而是会经过Jekyll程序的再处理。
 
 **二、Jekyll是什么？**	
 	 
-	 Jekyll（发音/'dʒiːk əl/，"杰克尔"）是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站
+Jekyll（发音/'dʒiːk əl/，"杰克尔"）是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站
+
 ![pygments-monokai](/res/img/blog/2015/1/17/jekyll.jpg) 
 
 整个思路到这里就很明显了。你先在本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站。
@@ -98,21 +102,19 @@ date : 2015-01-17
 进入该目录，创建一个default.html文件，作为Blog的默认模板。并在该文件中填入以下内容。
 
 {% highlight html %}
-<!DOCTYPE html>
 　　<html>
 　　<head>
 　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 　　　　<title>{{ page.title }}</title>
 　　</head>
 　　<body>
-
 　　　　{{ content }}
-
 　　</body>
 　　</html>
 {% endhighlight %}
 
 Jekyll使用Liquid模板语言，{{ page.title }}表示文章标题，{{ content }}表示文章内容，更多模板变量请参考官方文档。
+
 目录结构变成：
 
 {% highlight text %}
@@ -130,6 +132,7 @@ Jekyll使用Liquid模板语言，{{ page.title }}表示文章标题，{{ content
 
 进入该目录，创建第一篇文章。文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。(注意，文件名必须为"年-月-日-文章标题.后缀名"的格式。如果网页代码采用html格式，后缀名为html；如果采用markdown格式，后缀名为md。）
 在该文件中，填入以下内容：（注意，行首不能有空格）
+
 {% highlight html %}
    ---
 　　layout: default
@@ -157,7 +160,7 @@ Jekyll使用Liquid模板语言，{{ page.title }}表示文章标题，{{ content
 有了文章以后，还需要有一个首页。
 回到根目录，创建一个index.html文件，填入以下内容。
 {% highlight text %}
----
+    ---
 　　layout: default
 　　title: 我的Blog
 　　---
