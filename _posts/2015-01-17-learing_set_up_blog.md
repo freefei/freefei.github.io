@@ -198,11 +198,16 @@ Jekyll使用Liquid模板语言，{{ page.title }}表示文章标题，{{ content
 > $ git push origin gh-pages
 
 上传成功之后，等10分钟左右，访问http://username.github.com/jekyll\_demo/就可以看到Blog已经生成了（将username换成你的用户名）。
+
 首页：
+
 ![pygments-monokai](/res/img/blog/2015/1/17/myblog.jpg)  
+
 文章页面：
+
 ![pygments-monokai](/res/img/blog/2015/1/17/hello_wrold.jpg)  
-* 第七步，绑定域名。*
+
+* 第七步，绑定域名。
 如果你不想用http://username.github.com/jekyll\_demo/这个域名，可以换成自己的域名。
 具体方法是在repo的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如example.com或者xxx.example.com。
 如果绑定的是顶级域名，则DNS要新建一条A记录，指向204.232.175.78。如果绑定的是二级域名，则DNS要新建一条CNAME记录，指向username.github.com（请将username换成你的用户名）。此外，别忘了将_config.yml文件中的baseurl改成根目录"/"。
