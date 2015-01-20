@@ -6,7 +6,7 @@ duoshuo: true
 date: 2015-01-20
 tags : [java注解]
 ---
-##@SuppressWarnings(unchecked)作用解释
+
 屏蔽某些编译时的警告信息 
 在强制类型转换的时候编译器会给出警告 
 @SuppressWarnings("unchecked")
