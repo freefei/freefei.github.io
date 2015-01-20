@@ -11,7 +11,10 @@ tags : [java注解]
 在强制类型转换的时候编译器会给出警告 
 @SuppressWarnings("unchecked")
 
+<!-- more -->
+
 关键字
+
 * deprecation
 使用了不赞成使用的类或方法时的警告
 * unchecked
@@ -28,6 +31,7 @@ tags : [java注解]
 关于以上所有情况的警告。
 
 示例：
+
 *   @SuppressWarnings("unchecked")
 告诉编译器忽略 unchecked 警告信息，如使用List，ArrayList等未进行参数化产生的警告信息。
 *  @SuppressWarnings("serial")
