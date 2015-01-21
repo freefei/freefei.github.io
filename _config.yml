@@ -19,7 +19,7 @@ shTheme: shThemeDefault # shThemeDefault  shThemeDjango  shThemeEclipse  shTheme
 
 blog:
     name: 宋仁飞                                          # 博客名称
-    description: 第一个个人博客，学习中。                    # 博客描述
+    description: 趁自己还年轻，给自己一个牛逼的机会。         # 博客描述
     title: songrenfei                                    # 网页标题
     url: http://freefei.github.io/                       # 博客地址
     duoshuo: freefei                                     # 多说ID
