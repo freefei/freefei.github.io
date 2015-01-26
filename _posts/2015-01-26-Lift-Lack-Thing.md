@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 你缺少什么？
 category: 生活感悟
 date: 2015-01-26

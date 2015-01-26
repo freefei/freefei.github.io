@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 对不起，是我错了！
 category: 生活感悟
 date: 2015-01-26
