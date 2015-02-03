@@ -4,6 +4,7 @@ icon: fa fa-cubes
 members:
   - name: 基于nginx tomcat redis分布式web应用的session共享配置
     link: http://www.cnblogs.com/lengfo/p/4260363.html
-  - name: CSDN网站架构资讯
-  	link: http://www.csdn.net/tag/%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84/news
+  - name: CSDN 网站架构资讯
+    link: http://www.csdn.net/tag/网站架构/news
+
 
