@@ -16,17 +16,22 @@ java.util.Collections 是针对集合类的一个帮助类，它提供了一系�
 <!-- more -->
 
 它们两个的区别在于：
+
 （1）、线程安全的问题：Vector是早期Java就有的，是允许多线程操作的，是线程安全的；而ArrayList是在Java2中才出现，它是线程不安全的，只能使用单线程
 操作。 由于Vector支持多线程操作，所以在性能上就比不上ArrayList了。同样的HashTable相比于HashMap也是支持多线程的操作而导致性能不如HashMap。
+
 （2）、数据增长的问题
 ArrayList和Vector都有一个初始的容量大小，当存储进去它们里面的元素个数超出容量的时候，就需要增加ArrayList和Vector的存储空间，每次增加存储空间
 的时候不是只增加一个存储单元，是增加多个存储单元。Vector默认增加原来的一倍，ArrayList默认增加原来的0.5倍。
 Vector可以由我们自己来设置增长的大小，ArrayList没有提供相关的方法。
+
 3、LinkedList与ArrayList有什么区别
+
 两者都实现的是List接口，不同之处在于：
 （1）、ArrayList是基于动态数组实现的，LinkedList是基于链表的数据结构。
 （2）、get访问List内部任意元素时，ArrayList的性能要比LinkedList性能好。LinkedList中的get方法是要按照顺序从列表的一端开始检查，直到另一端
 （3）、对于新增和删除操作LinkedList要强于ArrayList，因为ArrayList要移动数据
+
 4、去掉Vector中的一个重复元素
 
 {% highlight java %}
@@ -87,6 +92,7 @@ public class VectorDemo {
 （1）、HashTable是早期Java就有的，支持多线程操作，是线程安全的。HashMap是Java2才出现的，是HashTable的轻量级实现，仅支持单线程操作，线程不安
 全的。
 （2）、HashMap允许空的key和value  HashTable不允许
+
 6、List与Map的区别
 List是存储单列数据的集合，Map是存储key和value这样双列数据的集合，List中存储的数据是有顺序的，并且允许重复。Map当中存储的数据是没有顺序的，它
 存储的key是不能重复的，value是可以重复的。
@@ -98,6 +104,7 @@ List内的元素讲究有序性，内部元素可重复；但是Set恰恰相反�
 Map与List和Set不同，它是双列存储的（键和值一一对应），它在存储元素调用的是put方法，每次存储时，要存储一份key和value，不能存储重复的key，这个
 重复的规则也是利用equals进行比较。取数据的时候则可以根据key获取value。另外还是以获得所有key的集合和所有value的集合，还可以获得key和value组成
 的Map.Entry对象的集合。
+
 8、介绍一下TreeSet
 （1）TreeSet的原理
 Tree在存储对象的时候需要排序，但是需要指定排序的算法。
