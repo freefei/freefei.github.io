@@ -4,10 +4,16 @@ icon: fa fa-calendar-o
 members:
   - name: Java编程最差实践
     link: http://macrochen.iteye.com/blog/1393502
-  - name: Java泛型详解
+  - name: Java泛型详解1
     link: http://blog.csdn.net/jinuxwu/article/details/6771121
-  - name: Java泛型详解
+  - name: Java泛型详解2
     link: http://www.cnblogs.com/yinhaiming/articles/1749738.html
-  - name: Java泛型详解
+  - name: Java泛型详解3
     link: http://blog.csdn.net/mtawaken/article/details/9813581
+  - name: Java并发1
+    link: http://www.blogjava.net/xylz/category/45607.html
+  - name: Java并发2
+    link: http://www.cnblogs.com/dolphin0520/category/602384.html
+  - name: Java并发3
+    link: http://ifeve.com/thread-management-1/
 
