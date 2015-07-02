@@ -12,6 +12,9 @@ java.util.Collection 是一个集合接口，Collection接口在Java类库中有
 java.util.Collections 是针对集合类的一个帮助类，它提供了一系列的静态方法实现对各种集合的搜索、排序、线程安全化等操作。
 2、ArrayList与Vector的区别
 这两个类都实现了List接口（List接口继承自Collection接口）。它们都是有序集合，它们内部的元素都是可以重复的，都可以根据序号取出其中的某一元素。
+
+<!-- more -->
+
 它们两个的区别在于：
 （1）、线程安全的问题：Vector是早期Java就有的，是允许多线程操作的，是线程安全的；而ArrayList是在Java2中才出现，它是线程不安全的，只能使用单线程
 操作。 由于Vector支持多线程操作，所以在性能上就比不上ArrayList了。同样的HashTable相比于HashMap也是支持多线程的操作而导致性能不如HashMap。
