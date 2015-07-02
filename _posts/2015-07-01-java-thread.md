@@ -8,6 +8,7 @@ tags : [面试]
 ---
 
 1、多线程有哪几种实现方法？举个例子说明下线程的同步。
+
 （1）Java多线程有两种实现方式：继承Thread类和实现Runnable接口，Thread就是实现了Runnable接口。
 两个最简单的线程例子：
 
@@ -57,7 +58,11 @@ class Runnable1  implements Runnable {
 {% endhighlight %}
 
 通过上两个例子发现，当启动线程的时候并不影响主程序的继续执行。
+
+<!-- more -->
+
 （2）线程同步问题
+
 使用synchronnized关键字
 银行账户存取钱的问题：
 
@@ -161,11 +166,14 @@ class Thread6 extends Thread{
 {% endhighlight %}
 
 输出结果的顺序是：Thread5全部打印完后 Thread6和主程序交替打印。验证了上面的说法
+
 3、当一个线程进入到一个对象的synchronized方法，那么其他线程是否可以进入该对象的其它方法？
+
 不一定，看情况
 如果其它方法加了static关键字，那么该方法属于类，不属于对象，不能与对象的方法保持同步（即使有synchronized关键字），是能进入的。
 如果其它方法不带有static关键字且带有synchronized关键字，那么不能进入，如果不带，则能。
 再其次就看方法内部有没有wait（）方法释放锁了
+
 4、子线程循环2次，接着主线程循环3次，接着子线程循环3次，接着主线程循环3次，如此循环5次，请写出程序代码。
 
 {% highlight java %}
@@ -212,7 +220,9 @@ class Thread7 extends Thread {
 {% endhighlight %}
 
 这个题就是要注意调用子线程的start方法的时候并不能阻止主程序继续向下执行，所以我们要用变量来标记。
+
 5、sleep()和wait()有何异同？
+
 （1）首先一个最明显的区别是  wait是Object类的方法,而sleep()是Thread类的静态方法,谁调用了该方法谁去休眠,即使在a线程里调用了b线程的sleep方法,实际上还是a线程去休眠.
 （2）比较重要的一点是sleep没有释放出锁，而wait释放了锁，是其他线程可以使用同步块资源。
      sleep不出让系统资源；wait是进入线程等待池等待，出让系统资源，其他线程可以占用CPU。一般wait不会加时间限制，因为如果wait线程的运行资源不够，再出来也没用，要
