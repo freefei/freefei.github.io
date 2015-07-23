@@ -190,7 +190,7 @@ Apache Commons 包提供了两个非常优秀的类来生成hashCode()和equals(
 52	    }
 53	 }
 
-{% endhighlight%
+{% endhighlight%}
 
 
 ### 需要注意记住的事情
