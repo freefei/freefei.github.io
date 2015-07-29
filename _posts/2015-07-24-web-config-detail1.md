@@ -5,15 +5,13 @@ category: Web
 date: 2015-07-24
 ---
 
-{% highlight xml %}
-
 <?xml version="1.0" encoding="UTF-8"?>  
   
 <web-app  xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">  
       
 <display-name>网站名称</display-name>  
 <description>网站描述</description>  
-      
+     
 <!-- icon元素包含small-icon和large-icon两个子元素.用来指定web站台中小图标和大图标的路径. -->  
 <icon>  
     <!--small-icon元素应指向web站台中某个小图标的路径,大小为16 X 16 pixel,但是图象文件必须为GIF或JPEG格式,扩展名必须为:.gif或.jpg. -->  
@@ -207,4 +205,4 @@ date: 2015-07-24
       
 </web-app>  
 
-{% endhighlight %}
+
