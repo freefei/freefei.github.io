@@ -21,6 +21,7 @@ git pull --rebase
 
 合并前：
 
+{% highlight text%}
       D---E master
      /
 A---B---C---F origin/master
@@ -30,6 +31,8 @@ A---B---C---F origin/master
       D--------E  
      /          \
 A---B---C---F----G   master, origin/master
+
+{% endhighlight%}
 
 如果是 rebase 的方式，就不會有 G 合并点：
 
