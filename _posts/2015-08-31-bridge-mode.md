@@ -65,7 +65,7 @@ public class MyBridge extends Bridge {
 	}
 }
 
-{% endhighlihgt%}
+{% endhighlight%}
 
 测试类：
 
