@@ -66,7 +66,7 @@ public class MyInvocationHandler implements InvocationHandler {
 		return result;
 	}
 }
-{% endhighlihgt%}
+{% endhighlight%}
 
 测试类
 
