@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 享元模式（Flyweight
+title: 享元模式（Flyweight)
 category: 设计模式
 date: 2015-09-01
 ---
