@@ -106,7 +106,7 @@ public class ObserverTest {
 	}
 
 }
-{% endhighlight}
+{% endhighlight%}
 
 输出：
 
