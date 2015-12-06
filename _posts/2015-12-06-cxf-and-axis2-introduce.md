@@ -20,7 +20,8 @@ date: 2015-12-06
 
 与CXF这类嵌入式的框架相比，Axis2更像是一种是WS容器，它要求应用程序以aar包的形式部署到自己里面，这对于既有系统，特别是那些基于servlet容器的web应用来说，改造的代价可能会很大。Axis2的优势在于一方面它对WS-*协议族的支持比较全面，另一方面是它还支持C平台，这是一个值得我们关注的优势
 
-**CXF VS AXIS2
+**CXF VS AXIS2**
+
 
 1.CXF支持 WS-Addressing，WS-Policy， WS-RM， WS-Security和WS-I Basic Profile。Axis2不支持WS-Policy，但是承诺在下面的版本支持。 
 
